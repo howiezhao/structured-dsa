@@ -1,0 +1,10 @@
+[book]
+authors = ["howiezhao"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Structured DSA"
+
+[output.html]
+git-repository-url = "https://github.com/howiezhao/structured-dsa"
+mathjax-support = true
