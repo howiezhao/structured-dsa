@@ -39,7 +39,7 @@
   - [暴力匹配](string-match/bf.md)
   - [KMP](string-match/kmp.md)
   - [BM](string-match/bm.md)
-  - [Rabin–Karp](string-match/rabin–karp.md)
+  - [Rabin-Karp](string-match/rabin-karp.md)
 - [策略](strategy/README.md)
   - [贪心](strategy/greedy.md)
   - [减治](strategy/reduce-and-conquer.md)
