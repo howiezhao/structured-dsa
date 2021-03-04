@@ -2,6 +2,8 @@
 
 节点度数不超过 2 的树称作**二叉树**（binary tree）。
 
+每个节点的度数都是偶数（或者是 0 或者是 2）的树称作**真二叉树**（full binary tree）。
+
 二叉树是多叉树的特例，但在有根且有序时，其描述能力却足以覆盖后者。
 
 ```python
@@ -132,3 +134,9 @@ class Solution:
 ```
 
 LeetCode：[102. 二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
+
+## 重构
+
+已知 *前序遍历与后序遍历之一* 以及 *中序遍历*，可以重构出一棵二叉树。
+
+已知 *前序遍历* 以及 *后序遍历*，可以重构出一颗真二叉树。

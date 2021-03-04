@@ -1,6 +1,8 @@
 # 队列
 
-队列（queue）
+**队列**（queue）也是**受限**的序列，其只能在队尾插入（enqueue），只能在对头删除（dequeue）。
+
+队列的这种特性也可以被称为**先进先出**（FIFO，First In First Out）。
 
 在 Python 中可以使用内置的 collections.deque 来实现队列的功能，如下：
 
