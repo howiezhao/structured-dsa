@@ -1,10 +1,19 @@
 # 二叉树
 
-节点度数不超过 2 的树称作**二叉树**（binary tree）。
+节点度数**不超过 2** 的树称作**二叉树**（binary tree）。
+
+同一节点的孩子和子树，均以**左**、**右**区分，其中隐含有序。
+
+深度为 \\(k\\) 的节点，至多 \\(2^k\\) 个。
+
+含 \\(n\\) 个节点、高度为 \\(h\\) 的二叉树中：\\(h\lt n\lt 2^{h+1}\\)：
+
+- \\(n=h+1\\) 时：退化为一条单链
+- \\(n=2^{h+1}-1\\) 时：即所谓**满二叉树**（full binary tree）
 
 每个节点的度数都是偶数（或者是 0 或者是 2）的树称作**真二叉树**（full binary tree）。
 
-二叉树是多叉树的特例，但在有根且有序时，其描述能力却足以覆盖后者。
+二叉树是多叉树的特例，但在有根且有序时，其描述能力却足以覆盖后者。利用长子-兄弟表示法，多叉树均可转化并表示为二叉树。
 
 ```python
 class TreeNode:
@@ -33,7 +42,6 @@ class BinTree:
 前序遍历（preorder traversal）又称先序遍历，指先访问根，然后访问子树的遍历方式
 
 ```python
-# 迭代实现
 class Solution:
     def visit_along_left_branch(self, root: TreeNode, stack, result):
         while root:
@@ -41,6 +49,7 @@ class Solution:
             stack.append(root.right)
             root = root.left
 
+    # 迭代实现
     def preorder_traversal(self, root: TreeNode) -> List[int]:
         stack = []
         result = []
@@ -49,6 +58,16 @@ class Solution:
             if not stack:
                 break
             root = stack.pop()
+        return result
+
+    # 递归实现
+    def preorder_traversal_recursion(self, root: TreeNode) -> List[int]:
+        result = []
+        if not root:
+            return
+        result.append(root.val)
+        self.preorder_traversal_recursion(root.left)
+        self.preorder_traversal_recursion(root.right)
         return result
 ```
 
@@ -61,13 +80,13 @@ LeetCode：[144. 二叉树的前序遍历](https://leetcode-cn.com/problems/bina
 如果二叉树画的规范的话，那么它的**垂直投影**则是中序遍历序列。
 
 ```python
-# 迭代实现
 class Solution:
     def go_along_left_branch(self, root: TreeNode, stack):
         while root:
             stack.append(root)
             root = root.left
 
+    # 迭代实现
     def inorder_traversal(self, root: TreeNode) -> List[int]:
         stack = []
         result = []
@@ -94,7 +113,8 @@ class Solution:
             stack.append(root)
             root = root.left
 
-    def inorder_traversal(self, root: TreeNode) -> List[int]:
+    # 迭代实现
+    def postorder_traversal(self, root: TreeNode) -> List[int]:
         stack = []
         result = []
         if root:
@@ -117,8 +137,8 @@ LeetCode：[145. 二叉树的后序遍历](https://leetcode-cn.com/problems/bina
 from collections import deque
 
 
-# 迭代实现
 class Solution:
+    # 迭代实现
     def level_order_traversal(self, root: TreeNode) -> List[int]:
         result = []
         queue = deque()  # 引入辅助队列
