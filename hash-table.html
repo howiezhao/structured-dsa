@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>哈希表 - Structured DSA</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li class="chapter-item expanded "><a href="prepare/index.html"><strong aria-hidden="true">2.</strong> 先修</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="prepare/math.html"><strong aria-hidden="true">2.1.</strong> 数学</a></li><li class="chapter-item expanded "><a href="prepare/programming-language.html"><strong aria-hidden="true">2.2.</strong> 编程语言</a></li><li class="chapter-item expanded "><a href="prepare/analysis-of-algorithms.html"><strong aria-hidden="true">2.3.</strong> 算法分析</a></li><li class="chapter-item expanded "><a href="prepare/back-of-the-envelope-calculation.html"><strong aria-hidden="true">2.4.</strong> 封底估算</a></li></ol></li><li class="chapter-item expanded "><a href="linear-list/index.html"><strong aria-hidden="true">3.</strong> 线性表</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="linear-list/contiguous-list.html"><strong aria-hidden="true">3.1.</strong> 顺序表</a></li><li class="chapter-item expanded "><a href="linear-list/linked-list.html"><strong aria-hidden="true">3.2.</strong> 链表</a></li><li class="chapter-item expanded "><a href="linear-list/stack.html"><strong aria-hidden="true">3.3.</strong> 栈</a></li><li class="chapter-item expanded "><a href="linear-list/queue.html"><strong aria-hidden="true">3.4.</strong> 队列</a></li></ol></li><li class="chapter-item expanded "><a href="tree/index.html"><strong aria-hidden="true">4.</strong> 树</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tree/binary-tree/index.html"><strong aria-hidden="true">4.1.</strong> 二叉树</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tree/binary-tree/bst/index.html"><strong aria-hidden="true">4.1.1.</strong> 二叉搜索树</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tree/binary-tree/bst/bbst/index.html"><strong aria-hidden="true">4.1.1.1.</strong> 平衡二叉搜索树</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tree/binary-tree/bst/bbst/avl-tree.html"><strong aria-hidden="true">4.1.1.1.1.</strong> AVL 树</a></li><li class="chapter-item expanded "><a href="tree/binary-tree/bst/bbst/splay-tree.html"><strong aria-hidden="true">4.1.1.1.2.</strong> 伸展树</a></li><li class="chapter-item expanded "><a href="tree/binary-tree/bst/bbst/red-black-tree.html"><strong aria-hidden="true">4.1.1.1.3.</strong> 红黑树</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="tree/b-tree.html"><strong aria-hidden="true">4.2.</strong> B 树</a></li><li class="chapter-item expanded "><a href="tree/b-plus-tree.html"><strong aria-hidden="true">4.3.</strong> B+ 树</a></li></ol></li><li class="chapter-item expanded "><a href="graph/index.html"><strong aria-hidden="true">5.</strong> 图</a></li><li class="chapter-item expanded "><a href="hash-table.html" class="active"><strong aria-hidden="true">6.</strong> 哈希表</a></li><li class="chapter-item expanded "><a href="sort/index.html"><strong aria-hidden="true">7.</strong> 排序</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sort/mergesort.html"><strong aria-hidden="true">7.1.</strong> 归并排序</a></li><li class="chapter-item expanded "><a href="sort/quicksort.html"><strong aria-hidden="true">7.2.</strong> 快速排序</a></li><li class="chapter-item expanded "><a href="sort/heapsort.html"><strong aria-hidden="true">7.3.</strong> 堆排序</a></li><li class="chapter-item expanded "><a href="sort/insertionsort.html"><strong aria-hidden="true">7.4.</strong> 插入排序</a></li><li class="chapter-item expanded "><a href="sort/bubblesort.html"><strong aria-hidden="true">7.5.</strong> 冒泡排序</a></li><li class="chapter-item expanded "><a href="sort/selectionsort.html"><strong aria-hidden="true">7.6.</strong> 选择排序</a></li><li class="chapter-item expanded "><a href="sort/countingsort.html"><strong aria-hidden="true">7.7.</strong> 计数排序</a></li><li class="chapter-item expanded "><a href="sort/bucketsort.html"><strong aria-hidden="true">7.8.</strong> 桶排序</a></li><li class="chapter-item expanded "><a href="sort/shellsort.html"><strong aria-hidden="true">7.9.</strong> 希尔排序</a></li></ol></li><li class="chapter-item expanded "><a href="search/index.html"><strong aria-hidden="true">8.</strong> 查找</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search/binary-search.html"><strong aria-hidden="true">8.1.</strong> 二分查找</a></li><li class="chapter-item expanded "><a href="search/fibonacci-search.html"><strong aria-hidden="true">8.2.</strong> Fibonacci 查找</a></li><li class="chapter-item expanded "><a href="search/interpolation-search.html"><strong aria-hidden="true">8.3.</strong> 插值查找</a></li></ol></li><li class="chapter-item expanded "><a href="string-match/index.html"><strong aria-hidden="true">9.</strong> 字符串匹配</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="string-match/bf.html"><strong aria-hidden="true">9.1.</strong> 暴力匹配</a></li><li class="chapter-item expanded "><a href="string-match/kmp.html"><strong aria-hidden="true">9.2.</strong> KMP</a></li><li class="chapter-item expanded "><a href="string-match/bm.html"><strong aria-hidden="true">9.3.</strong> BM</a></li><li class="chapter-item expanded "><a href="string-match/rabin-karp.html"><strong aria-hidden="true">9.4.</strong> Rabin-Karp</a></li></ol></li><li class="chapter-item expanded "><a href="strategy/index.html"><strong aria-hidden="true">10.</strong> 策略</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="strategy/greedy.html"><strong aria-hidden="true">10.1.</strong> 贪心</a></li><li class="chapter-item expanded "><a href="strategy/reduce-and-conquer.html"><strong aria-hidden="true">10.2.</strong> 减治</a></li><li class="chapter-item expanded "><a href="strategy/divide-and-conquer.html"><strong aria-hidden="true">10.3.</strong> 分治</a></li><li class="chapter-item expanded "><a href="strategy/dynamic-programming.html"><strong aria-hidden="true">10.4.</strong> 动态规划</a></li><li class="chapter-item expanded "><a href="strategy/sliding-window.html"><strong aria-hidden="true">10.5.</strong> 滑动窗口</a></li></ol></li><li class="chapter-item expanded "><a href="common-algo/index.html"><strong aria-hidden="true">11.</strong> 常用算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="common-algo/lru.html"><strong aria-hidden="true">11.1.</strong> LRU</a></li><li class="chapter-item expanded "><a href="common-algo/union-find.html"><strong aria-hidden="true">11.2.</strong> 并查集</a></li></ol></li><li class="chapter-item expanded "><a href="faq/index.html"><strong aria-hidden="true">12.</strong> 常考题型</a></li><li class="chapter-item expanded "><a href="problem-solving-summary.html"><strong aria-hidden="true">13.</strong> 刷题总结</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Structured DSA</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/howiezhao/structured-dsa" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#哈希表" id="哈希表">哈希表</a></h1>
+<h2><a class="header" href="#概念" id="概念">概念</a></h2>
+<p><strong>哈希表</strong>（hash table）又称字典（dictionary）、词典或散列表，<strong>哈希</strong>（hashing）又称散列或杂凑。</p>
+<p>当我们需要存储和组织的数据项可能来自于一个相当大的空间（不妨将其数量记为 R），而在任何一个常规的时刻，我们所真正需要存储和组织的数据只是其中非常非常小的一个子集时（不妨将其数量记为 N），为了提升空间效率，就需要使用哈希表。</p>
+<p>哈希表中的每一个单元被称为<strong>桶</strong>（bucket），其可以 <em>直接存放</em> 或 <em>间接指向</em> 一个词条（entry）。因此，哈希表又可称为桶数组（bucket array）。</p>
+<p><strong>定址</strong>（或哈希）是指根据词条的 key（未必可比较）直接确定哈希表入口。要实现这种定址就需要<strong>哈希函数</strong>/散列函数。</p>
+<p>为方便讨论，我们将哈希表的长度（即容量）记为 M。</p>
+<p>已用空间的容量与哈希表总容量之比，即 N/M，称为<strong>装填因子</strong>（load factor），通常也简记为 \(\lambda\)。</p>
+<p>哈希冲突/散列冲突（hash collision），即存在 key1 != key2，但 hash(key1) = hash(key2)。适当的将哈希表的长度增长，可以减少冲突出现的概率。</p>
+<p>从理论上讲，哈希可以看作是由一个大空间到小空间的映射，因此绝不可能是单射，即冲突不可避免，但是，近似的单射往往可行，因此，我们需要：</p>
+<ul>
+<li>精心设计哈希表及哈希函数，以尽可能降低冲突的概率；</li>
+<li>更需要制定可行的预案，以便在发生冲突时，能够尽快予以排解。</li>
+</ul>
+<p>下面两节将分别介绍。</p>
+<h2><a class="header" href="#哈希函数" id="哈希函数">哈希函数</a></h2>
+<p>一个好的哈希函数有以下特性：</p>
+<ul>
+<li><strong>确定</strong>（determinism）：同一关键码总是被映射至同一地址</li>
+<li><strong>快速</strong>（efficiency）：\(expected-O(1)\)</li>
+<li><strong>满射</strong>（surjection）：尽可能充分地覆盖整个哈希空间</li>
+<li><strong>均匀</strong>（uniformity）：关键码映射到哈希表各位置的概率尽量接近，可有效避免聚集（clustering）现象。</li>
+</ul>
+<p>以下是一些常用的哈希函数：</p>
+<h3><a class="header" href="#除余法" id="除余法">除余法</a></h3>
+<p>\(hash(key) = key \bmod M\)，M 为素数时，数据对哈希表的覆盖最充分，分布最均匀。</p>
+<p>除余法的缺陷：</p>
+<ul>
+<li><strong>不动点</strong>：无论表长 M 取值如何，总有 hash(0) = 0</li>
+<li><strong>零阶均匀</strong>：[0, k) 的关键码，平均分配至 M 个桶；但相邻关键码的哈希地址也必相邻</li>
+</ul>
+<h3><a class="header" href="#mad-法" id="mad-法">MAD 法</a></h3>
+<p>MAD 即 multiply-add-divide（乘-加-除），取 M 为素数，\(a &gt; 0\)，\(b &gt; 0\)，\(a \bmod M \neq 0\)，\(hash(key) = (a \times key + b) \bmod M\)。</p>
+<p>MAD 法可以解决上述除余法的两个缺陷：</p>
+<ul>
+<li>b 可以看作是偏移量（offset），可解决不动点问题</li>
+<li>a 可以看作是步长（step），可以实现<strong>一阶均匀</strong>，即邻近的关键码，哈希地址不再邻近</li>
+</ul>
+<p>当然，特定场合下，未必需要高阶的均匀性。</p>
+<h3><a class="header" href="#数字分析法selecting-digits" id="数字分析法selecting-digits">数字分析法（selecting digits）</a></h3>
+<p>抽取 key 中的某几位，构成地址。</p>
+<p>比如，取十进制表示的奇数位：\(hash(123456789) = 13579\)</p>
+<p>此方法的缺陷在于没有被选用的那一组数位，对最终的哈希地址没有任何影响和贡献，没有足够的体现均匀性的要求。</p>
+<h3><a class="header" href="#平方取中法mid-square" id="平方取中法mid-square">平方取中法（mid-square）</a></h3>
+<p>取 \(key^2\) 的中间若干位，构成地址。</p>
+<p>比如：</p>
+<p>\(hash(123)=512\)，保留 \(key^2=123^2=15129\) 的中间 3 位</p>
+<p>\(hash(1234567)=556\)，保留 \(1234567^2=1524155677489\) 的中间 3 位</p>
+<p>平方取中法可以有效的解决上述方法的缺陷，取中间的数位可以使得构成原关键码的各数位能够对最终的哈希地址有尽可能接近的影响。</p>
+<h3><a class="header" href="#折叠法folding" id="折叠法folding">折叠法（folding）</a></h3>
+<p>将 key 分割成等宽的若干段，取其总和作为地址。</p>
+<h3><a class="header" href="#位异或法-xor" id="位异或法-xor">位异或法 XOR</a></h3>
+<p>将 key 分割成等宽的二进制段，经异或运算得到地址。</p>
+<p>总之，哈希函数越是随机，越是没有规律，越好。</p>
+<h2><a class="header" href="#排解冲突" id="排解冲突">排解冲突</a></h2>
+<p>哈希表中的冲突无法避免，通过以下方法可以排解冲突：</p>
+<h3><a class="header" href="#多槽位" id="多槽位">多槽位</a></h3>
+<p><strong>多槽位</strong>（multiple slots）：桶单元细分成若干槽位（slot），存放（与同一单元）冲突的词条。</p>
+<p>只要槽位数目不多，依然可以保证 \(O(1)\) 的时间效率。</p>
+<p>但是，需要为每个桶配备多少个槽，方能保证 \(O(1)\)？若预留过多，则空间浪费；无论预留多少，极端情况下仍有可能不够。</p>
+<h3><a class="header" href="#独立链" id="独立链">独立链</a></h3>
+<p>为了解决以上问题，可以采用独立链法。</p>
+<p><strong>独立链</strong>（linked-list chaining/separate chaining）：每个桶存放一个指针，冲突的词条，组织成链表。</p>
+<p>它存在如下优点与缺点：</p>
+<p>优点：</p>
+<ul>
+<li>无需为每个桶预备多个槽位</li>
+<li>任意多次的冲突都可解决</li>
+<li>删除操作实现简单、统一</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>指针需要额外空间</li>
+<li>节点需要动态申请</li>
+<li>空间未必连续分布，系统缓存几乎失效</li>
+</ul>
+<h3><a class="header" href="#开放定址" id="开放定址">开放定址</a></h3>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="graph/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="sort/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="graph/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="sort/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
