@@ -22,6 +22,7 @@
   - [B+ 树](tree/b-plus-tree.md)
 - [图](graph/README.md)
 - [哈希表](hash-table.md)
+- [优先级队列](priority-queue.md)
 - [排序](sort/README.md)
   - [归并排序](sort/mergesort.md)
   - [快速排序](sort/quicksort.md)
