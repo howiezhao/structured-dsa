@@ -155,17 +155,19 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#队列" id="队列">队列</a></h1>
-<p><strong>队列</strong>（queue）也是<strong>受限</strong>的序列，其只能在队尾插入（enqueue），只能在对头删除（dequeue）。</p>
+<p><strong>队列</strong>（queue）也是<strong>受限</strong>的序列，其只能在队尾插入（enqueue），只能在队头删除（dequeue）。</p>
 <p>队列的这种特性也可以被称为<strong>先进先出</strong>（FIFO，First In First Out）。</p>
-<p>在 Python 中可以使用内置的 collections.deque 来实现队列的功能，如下：</p>
+<p>队列可以基于顺序表或链表实现。</p>
+<p>在 Python 中可以使用内置的 <code>collections.deque</code> 来实现队列的功能，如下：</p>
 <pre><code class="language-python">from collections import deque
 
 queue = deque()
-queue.append(1)  # 入队
-queue.append(2)  # 入队
-queue.popleft()  # 出队
-queue.popleft()  # 出队
+queue.append(1)  # 入队 [1]
+queue.append(2)  # 入队 [1, 2]
+queue.popleft()  # 出队 [2]
+queue.popleft()  # 出队 []
 </code></pre>
+<p>LeetCode：<a href="https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/">剑指 Offer 09. 用两个栈实现队列</a></p>
 
                     </main>
 

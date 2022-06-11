@@ -175,7 +175,7 @@
 class BinTree:
     pass
 </code></pre>
-<h2><a class="header" href="#深度优先遍历" id="深度优先遍历">深度优先遍历</a></h2>
+<h2><a class="header" href="#深度优先遍历dfs" id="深度优先遍历dfs">深度优先遍历（DFS）</a></h2>
 <p>二叉树的深度优先遍历具体分为：</p>
 <ul>
 <li>前序遍历</li>
@@ -183,6 +183,7 @@ class BinTree:
 <li>后序遍历</li>
 </ul>
 <p>前序、中序、后序是相对于根的访问顺序确定的。</p>
+<p>深度优先遍历一般要依靠栈来实现。</p>
 <h3><a class="header" href="#前序遍历" id="前序遍历">前序遍历</a></h3>
 <p>前序遍历（preorder traversal）又称先序遍历，指先访问根，然后访问子树的遍历方式</p>
 <pre><code class="language-python">class Solution:
@@ -259,8 +260,9 @@ class BinTree:
         return result
 </code></pre>
 <p>LeetCode：<a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">145. 二叉树的后序遍历</a></p>
-<h2><a class="header" href="#广度优先遍历" id="广度优先遍历">广度优先遍历</a></h2>
-<p>二叉树的广度优先遍历即层序遍历/层次遍历。</p>
+<h2><a class="header" href="#广度优先遍历bfs" id="广度优先遍历bfs">广度优先遍历（BFS）</a></h2>
+<p>二叉树的广度优先遍历即<strong>层序遍历</strong>/<strong>层次遍历</strong>。</p>
+<p>广度优先遍历一般要依靠队列来实现。</p>
 <pre><code class="language-python">from collections import deque
 
 
